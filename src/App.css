@@ -1,8 +1,9 @@
 .App {
 
 }
- p {
+ input {
    margin-left: 10px;
+   width: 20em;
  }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

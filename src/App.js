@@ -15,7 +15,7 @@ class App extends Component {
           <form>
           <input type="text" value={isNaN(key) ? key + ":" : null} />
           <input type="text" value={typeof object[key] === 'string' ? object[key] : null} />
-          {this.parseValue(object[key])}
+          {typeof object[key] === 'object' ? this.parseValue(object[key]) : null}
           </form>
       ))}
       </form>
@@ -54,9 +54,6 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         {this.renderObject(keys, object)}
       </div>
     );
