@@ -10,11 +10,15 @@ const keys = Object.keys(object);
 class App extends Component {
     renderObject = (keys, object) => {
     return (
-      <div>
+      <form>
       {keys.map(key => (
-          <p>{isNaN(key) ? key + ":" : null} {this.parseValue(object[key])}</p>
+          <form>
+          <input type="text" value={isNaN(key) ? key + ":" : null} />
+          <input type="text" value={typeof object[key] === 'string' ? object[key] : null} />
+          {this.parseValue(object[key])}
+          </form>
       ))}
-      </div>
+      </form>
     );
   };
 
@@ -28,10 +32,6 @@ class App extends Component {
     }
   }
 
-  // createKeyValue = (key) => {
-  //   const keyValue = typeof key === "number" ? null : key+":"
-  //   return keyValue;
-  // }
   // renderCategory = (key) => {
   //   return (
   //     <p>{key}:</p>
